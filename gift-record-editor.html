@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Prepare gift information — Crumb and Kind</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="gift-record-editor.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#editor">Skip to editor</a>
+    <header>
+      <a class="brand" href="index.html">Crumb &amp; Kind</a
+      ><a href="index.html#gift">Back to the guide</a>
+    </header>
+    <div class="layout">
+      <nav aria-label="Steps">
+        <a href="#editor">1. Enter verified details</a
+        ><a href="#output">2. Copy the record</a
+        ><a href="index.html#gift">3. Save it in Shopify</a>
+      </nav>
+      <main id="editor">
+        <h1>The details inside your gift.</h1>
+        <p>
+          Prepare a record for one exact variant. This tool works locally in
+          your browser. It does not connect to Shopify, save your data or send
+          it anywhere.
+        </p>
+        <form id="gift-form">
+          <div class="pair">
+            <div>
+              <label for="pieces">Number of pieces</label
+              ><input
+                id="pieces"
+                name="pieces"
+                type="number"
+                min="0"
+                max="1000"
+                step="1"
+                value="0"
+                required
+              />
+              <p class="help">
+                Use zero when unknown. Diagrams are limited to 48 pieces.
+              </p>
+            </div>
+          </div>
+          <div class="pair">
+            <div>
+              <label for="people-min">Minimum people</label
+              ><input
+                id="people-min"
+                name="people_min"
+                type="number"
+                min="0"
+                max="1000"
+                step="1"
+                value="0"
+                required
+              />
+            </div>
+            <div>
+              <label for="people-max">Maximum people</label
+              ><input
+                id="people-max"
+                name="people_max"
+                type="number"
+                min="0"
+                max="1000"
+                step="1"
+                value="0"
+                required
+              />
+            </div>
+          </div>
+          <p class="help">
+            Use zero in both fields when the sharing size is unknown. A positive
+            maximum must be at least the minimum.
+          </p>
+          <div>
+            <label for="contents">Exact contents</label
+            ><textarea
+              id="contents"
+              name="contents"
+              rows="4"
+              maxlength="4000"
+            ></textarea>
+          </div>
+          <div>
+            <label for="packaging">Packaging</label
+            ><textarea
+              id="packaging"
+              name="packaging"
+              rows="3"
+              maxlength="1000"
+            ></textarea>
+          </div>
+          <div>
+            <label for="dimensions">Box dimensions</label
+            ><input id="dimensions" name="dimensions" maxlength="500" />
+          </div>
+          <fieldset>
+            <legend>Suitable occasions</legend>
+            <label
+              ><input
+                type="checkbox"
+                name="occasions"
+                value="birthday"
+              />Birthday</label
+            ><label
+              ><input type="checkbox" name="occasions" value="thanks" />Thank
+              you</label
+            ><label
+              ><input
+                type="checkbox"
+                name="occasions"
+                value="sharing"
+              />Sharing</label
+            ><label
+              ><input
+                type="checkbox"
+                name="occasions"
+                value="just_because"
+              />Just because</label
+            >
+          </fieldset>
+          <p id="validation" class="error" role="status"></p>
+          <button type="submit">Prepare record</button>
+        </form>
+        <section id="output" hidden>
+          <h2>Your shared record</h2>
+          <p>
+            Copy this JSON into the variant’s Shared gift information field and
+            save it in Shopify. The theme reads it on both the gift guide and
+            the product page.
+          </p>
+          <pre id="record" tabindex="0"></pre>
+          <div class="actions">
+            <button id="copy" type="button">Copy record</button
+            ><button id="download" type="button">Download JSON</button>
+          </div>
+          <p id="copy-status" role="status"></p>
+        </section>
+        <footer>
+          No product claims are generated. Enter verified merchant information
+          only.
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+:root {
+  --paper: #fbf8ed;
+  --ink: #2e4b57;
+  --sage: #e4e8d8;
+  --line: #819189;
+  color-scheme: light;
+  scrollbar-color: var(--ink) var(--paper);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    400 16px/1.75 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  caret-color: var(--ink);
+}
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.75rem 4vw;
+  border-bottom: 1px solid var(--line);
+}
+header span {
+  font-size: 0.875rem;
+}
+.brand {
+  font:
+    400 1.75rem/1.2 Palatino,
+    serif;
+  text-decoration: none;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 5vw;
+  max-width: 1240px;
+  margin: auto;
+  padding: 3rem 4vw;
+}
+.layout > nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.75rem;
+  align-self: start;
+  position: sticky;
+  top: 2rem;
+  font-size: 0.875rem;
+}
+.layout > nav a {
+  padding-block: 0.25rem;
+}
+main {
+  max-width: 72ch;
+  min-width: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: Palatino, "Palatino Linotype", serif;
+  font-weight: 400;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.025em;
+  margin-block: 1rem 2rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-block: 3.5rem 1rem;
+}
+p {
+  margin-block: 0 1.25rem;
+}
+.lead {
+  font-size: 1.25rem;
+}
+.notice {
+  padding: 1.5rem;
+  background: var(--sage);
+  font-size: 0.875rem;
+}
+li {
+  padding-inline-start: 0.25rem;
+  margin-block: 0.75rem;
+}
+code,
+pre {
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+pre {
+  white-space: pre-wrap;
+  background: var(--sage);
+  padding: 1.5rem;
+}
+details {
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.5rem;
+}
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  min-height: 2rem;
+}
+details p {
+  margin-block: 1rem 0.5rem;
+}
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+  padding-block: 2rem;
+  font-size: 0.875rem;
+}
+.skip {
+  position: fixed;
+  top: -6rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1rem;
+  z-index: 10;
+}
+.skip:focus {
+  top: 1rem;
+}
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+::selection {
+  background: #efdc96;
+}
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+input,
+textarea,
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+input:not([type="checkbox"]),
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  background: #fffdf7;
+  border-radius: 2px;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--ink);
+}
+form {
+  display: grid;
+  gap: 1.5rem;
+}
+form fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+form fieldset label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 2.75rem;
+  font-weight: 400;
+}
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+button,
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  cursor: pointer;
+  justify-self: start;
+  text-decoration: none;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.help {
+  font-size: 0.875rem;
+  max-width: 65ch;
+}
+.error {
+  font-weight: 500;
+}
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+section {
+  scroll-margin-block-start: 2rem;
+}
+@media (max-width: 760px) {
+  header {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding: 2rem 1.25rem;
+  }
+  .layout > nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.5rem;
+  }
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+button:hover,
+.button:hover {
+  background: #3c606a;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #536b73;
+  opacity: 1;
+}
+button:active {
+  background: #263f49;
+}

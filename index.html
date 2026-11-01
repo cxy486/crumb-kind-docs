@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Crumb and Kind — Theme guide</title>
+    <link rel="stylesheet" href="guide.css" />
+    <script src="support.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#guide">Skip to guide</a>
+    <header>
+      <a href="index.html" class="brand">Crumb &amp; Kind</a
+      ><span>Theme guide · 0.3.0 candidate</span>
+    </header>
+    <div class="layout">
+      <nav aria-label="Guide contents">
+        <a href="#start">Install and start</a
+        ><a href="#gift">Shared gift details</a
+        ><a href="#editor">Customize your store</a
+        ><a href="#discovery">Search and recommendations</a
+        ><a href="#payments">Payments and delivery</a
+        ><a href="#updates">Update safely</a><a href="#faq">Common questions</a
+        ><a href="#support">Get support</a
+        ><a href="gift-record-editor.html">Prepare a gift record ↗</a>
+      </nav>
+      <main id="guide">
+        <h1>A considered shop, down to the little details.</h1>
+        <p class="lead">
+          Set up your products, keep gift information in one place, and make the
+          storefront your own.
+        </p>
+        <p class="notice">
+          This guide describes the 0.3.0 candidate. It is not a Shopify Theme
+          Store approval or a promise of availability. See Get support for
+          contact details and the current support setup status.
+        </p>
+        <section id="start">
+          <h2>Install and start</h2>
+          <ol>
+            <li>
+              In Shopify, open
+              <strong
+                >Online Store → Themes → Import theme → Upload zip file</strong
+              >.
+            </li>
+            <li>
+              Upload the clean installation ZIP. Keep your current theme until
+              you have reviewed the new preview.
+            </li>
+            <li>
+              Add your own products and collections. Choose a collection in the
+              Featured collection section and link your hero button.
+            </li>
+            <li>
+              Open Customize and add the sections you need. Use the preview
+              selector to review products, collections, pages and mobile
+              layouts.
+            </li>
+          </ol>
+          <p>
+            A clean installation has no links to our demonstration products.
+            Importing a theme does not copy products, menus, articles, shipping
+            rules or payment settings.
+          </p>
+        </section>
+        <section id="gift">
+          <h2>Gift information, maintained once</h2>
+          <p>
+            The guide and product page share a variant’s
+            <strong>Shared gift information</strong> record. Update a record
+            once to change both places. Each record describes the exact variant,
+            not every size of the product.
+          </p>
+          <ol>
+            <li>
+              In <strong>Settings → Custom data → Variants</strong>, add a
+              definition named <strong>Shared gift information</strong>, with
+              namespace and key <code>custom.gift_box</code>, type
+              <strong>JSON</strong>, and storefront access enabled.
+            </li>
+            <li>
+              Open <a href="gift-record-editor.html">the gift record editor</a>.
+              Enter verified contents, piece count, packaging and sharing size.
+              It prepares JSON locally and sends nothing to a server.
+            </li>
+            <li>
+              Open the product’s exact variant in Shopify. Paste the prepared
+              record into Shared gift information and save.
+            </li>
+            <li>
+              In the theme editor, add a Specific box choice to Gift guide and
+              comparison. Select the product and copy the numeric variant ID
+              from its Shopify admin address into Variant ID. A single default
+              variant needs no ID.
+            </li>
+            <li>
+              Add the Shared gift details block to the product template. It
+              reads the same record automatically.
+            </li>
+          </ol>
+          <p>
+            Variant IDs survive renaming. Deleting and recreating a variant
+            produces a new ID: update the choice when that happens. Existing
+            selections by exact variant title and old Box contents blocks remain
+            a compatibility fallback. Once shared data exists, it takes priority
+            over those old descriptions.
+          </p>
+          <p>
+            The theme never invents allergens, ingredients, dietary suitability,
+            delivery dates, shelf life or serving sizes. Leave unknown sharing
+            sizes at zero. Choices with unknown sharing sizes are excluded when
+            a shopper filters by people.
+          </p>
+          <p>
+            The curated guide renders up to twelve choices and resolves variant
+            IDs from the product’s first 250 variants. The ordinary product
+            option picker loads options on demand and does not require a
+            complete variant list. For a high-variant catalog, curate eligible
+            products and verify the guide’s selected IDs are available.
+          </p>
+        </section>
+        <section id="editor">
+          <h2>Customize your store</h2>
+          <p>
+            Use <strong>Theme settings → Brand</strong> to choose a logo, a
+            display name and favicon. Leave Brand name blank to use your Shopify
+            store name. Colors and Typography control the whole storefront.
+            System fonts are the initial default; you can choose Shopify library
+            fonts instead.
+          </p>
+          <p>
+            Product headings, prices, options, buy buttons, shared gift details,
+            descriptions, pickup and complementary products are individual
+            blocks. Reorder them in the editor. Keep a heading, product options
+            and buy buttons for a complete purchase flow.
+          </p>
+          <p>
+            Add Information blocks for verified delivery and care information.
+            Custom Liquid and app blocks are supported on the main and featured
+            product sections. Apps are optional; the theme works without a
+            required app.
+          </p>
+          <p>
+            Assign a three-level menu through your Shopify navigation settings.
+            Choose it in the Header section. The footer supports language and
+            country selectors when your store has more than one available
+            option.
+          </p>
+          <p>
+            For a contact page, create a Shopify page and assign
+            <strong>contact</strong> as its theme template. The native form
+            sends to your store’s configured contact email. Blog and article
+            templates include pagination and Shopify’s comment moderation flow.
+          </p>
+        </section>
+        <section id="discovery">
+          <h2>Search and recommendations</h2>
+          <p>
+            Collection and search pages display the filters your Shopify store
+            makes available. Configure filters through Shopify’s search
+            configuration. Predictive search provides suggestions after two
+            characters; ordinary search continues working if suggestions cannot
+            load.
+          </p>
+          <p>
+            Related products use Shopify’s recommendation service. Complementary
+            products use the complementary recommendations you configure. A
+            store with no eligible recommendation data shows no recommendation
+            panel. The theme does not fabricate results.
+          </p>
+        </section>
+        <section id="payments">
+          <h2>Payments and delivery</h2>
+          <p>
+            Accelerated checkout, Shop Pay Installments, country currencies,
+            pickup and customer accounts appear according to Shopify’s
+            eligibility and your store configuration. Theme support does not
+            activate a payment method, installment plan, market or pickup
+            location.
+          </p>
+          <p>
+            Gift messages are line item properties. All boxes on the same bag
+            line receive the same message. Add the same variant again with
+            another message for a separate line. Printing, packing and
+            fulfillment are the merchant’s responsibility.
+          </p>
+          <p>
+            Order notes are separate from printed gift messages. Save bag
+            changes before accelerated checkout; its buttons are hidden while an
+            order note or quantity has unsaved edits.
+          </p>
+          <p>
+            For gift card products, shoppers can enter a recipient and scheduled
+            sending date. Issued gift cards have a QR code, balance, expiry and
+            an Apple Wallet link when Shopify provides one.
+          </p>
+        </section>
+        <section id="updates">
+          <h2>Update safely</h2>
+          <ol>
+            <li>Duplicate your current theme before any update.</li>
+            <li>
+              Keep a copy of your current settings and templates. A
+              clean-install ZIP is for a new installation; do not use its blank
+              settings to overwrite an existing store.
+            </li>
+            <li>
+              Apply code updates in a draft. Recheck app blocks, product
+              selections, menus, colors, gift messages and checkout.
+            </li>
+            <li>
+              Keep shared gift information on the variants. It belongs to the
+              store and is not embedded in theme files.
+            </li>
+            <li>
+              Publish only after reviewing the draft and retain the previous
+              theme for rollback.
+            </li>
+          </ol>
+        </section>
+        <section id="faq">
+          <h2>Common questions</h2>
+          <details>
+            <summary>Why is a gift missing from the guide?</summary>
+            <p>
+              Check the product, variant ID, availability and the people filter.
+              Deleted variants and incomplete selections are not shown. A price
+              cap applies to the exact variant, not the product’s lowest
+              starting price.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Why does the old description differ from shared details?
+            </summary>
+            <p>
+              Shared details take priority, but a product’s written description
+              remains merchant content. Remove repeated quantities or serving
+              claims from that description if you want the shared record to be
+              the only place you maintain them.
+            </p>
+          </details>
+          <details>
+            <summary>Can I promise that a note will be printed?</summary>
+            <p>
+              Only if your fulfillment process supports it. The theme stores the
+              message with the order; it does not print or send a physical card.
+            </p>
+          </details>
+          <details>
+            <summary>Can I use the demonstration photos?</summary>
+            <p>
+              The clean theme ZIP does not include the demo’s stock photos. Use
+              assets you own or have licensed, and keep their original license
+              records. Do not present mood photographs as actual product
+              photography.
+            </p>
+          </details>
+          <details>
+            <summary>Why is my storefront asking for a password?</summary>
+            <p>
+              A development store can remain password protected even when its
+              theme is published. Manage access in Online Store → Preferences.
+              Theme publication does not purchase a Shopify plan.
+            </p>
+          </details>
+          <details>
+            <summary>What happens when a network request fails?</summary>
+            <p>
+              Variant selection blocks purchasing until the selection is
+              confirmed and exposes a normal-page fallback. Bag errors keep
+              visible messages and notes for recovery. Review the bag before
+              retrying an uncertain update.
+            </p>
+          </details>
+        </section>
+        <section id="support">
+          <h2>Get support</h2>
+          <p>
+            The intended support scope is installation, configuration questions
+            and theme defects. Custom development, third-party app behavior,
+            food claims and fulfillment are outside that scope.
+          </p>
+          <p>
+            Contact <a href="mailto:cxy16@hotmail.com">cxy16@hotmail.com</a>
+            for theme questions. Include the theme version, affected page and
+            steps to reproduce the problem.
+          </p>
+          <p class="notice" id="support-setup">
+            <strong>Support setup in progress.</strong> Form delivery and email
+            acknowledgements are not yet verified. Until setup is complete,
+            use the email link above. The theme is not yet available for purchase.
+          </p>
+          <form id="support-form" action="https://formsubmit.co/cxy16@hotmail.com"
+            method="post" enctype="multipart/form-data" aria-describedby="support-setup support-privacy">
+            <input type="hidden" name="_subject" value="Crumb and Kind — theme support" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://cxy486.github.io/crumb-kind-docs/thanks.html" />
+            <input type="hidden" name="_autoresponse" value="We received your Crumb and Kind theme support request. This is an automatic acknowledgement, not a resolution. Keep your theme version, affected page and reproduction steps in this conversation. Do not send passwords, payment information or customer data. You can reply to the theme owner at cxy16@hotmail.com." />
+            <input type="hidden" name="theme" value="Crumb and Kind" />
+            <div class="pair">
+              <div>
+                <label for="support-name">Full name (required)</label>
+                <input id="support-name" name="name" autocomplete="name" maxlength="120" required />
+              </div>
+              <div>
+                <label for="support-email">Reply email (required)</label>
+                <input id="support-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+              </div>
+            </div>
+            <div>
+              <label for="support-store">Store URL (required)</label>
+              <input id="support-store" name="store_url" type="url" inputmode="url" autocomplete="url"
+                placeholder="https://your-store.myshopify.com" maxlength="2048" aria-describedby="support-store-help" required />
+              <p class="help" id="support-store-help">Include https://, for example https://your-store.myshopify.com.</p>
+            </div>
+            <div>
+              <label for="support-version">Theme version (optional)</label>
+              <input id="support-version" name="theme_version" maxlength="40" placeholder="For example, 0.3.0" />
+            </div>
+            <div>
+              <label for="support-message">Describe the problem (required)</label>
+              <textarea id="support-message" name="message" rows="7" maxlength="10000"
+                aria-describedby="support-message-help" required></textarea>
+              <p class="help" id="support-message-help">What happened, what did you expect, and how can we reproduce it? Include the affected page and your browser or device.</p>
+            </div>
+            <div>
+              <label for="support-image">Screenshot (optional)</label>
+              <input id="support-image" name="attachment" type="file" accept="image/png,image/jpeg,image/webp"
+                aria-describedby="support-image-help support-file-error" />
+              <p class="help" id="support-image-help">One PNG, JPEG or WebP image, up to 5 MB. Hide names, email addresses and order details first.</p>
+              <p id="support-file-error" class="help error" role="status" aria-live="polite"></p>
+            </div>
+            <fieldset>
+              <label for="support-consent">
+                <input id="support-consent" name="support_consent" type="checkbox" value="agreed" required />
+                <span>I agree to share these details to receive theme support (required).</span>
+              </label>
+            </fieldset>
+            <p class="help" id="support-privacy">
+              Submitting sends your details and optional screenshot to FormSubmit
+              for delivery to the support mailbox. FormSubmit documents a 30-day
+              submission archive; email copies remain in the support mailbox.
+              We use the information to investigate and reply to your request.
+              Email us to ask for deletion. Do not include passwords, access
+              tokens, payment details or customer records.
+              Read <a href="https://formsubmit.co/privacy.pdf" rel="noopener noreferrer">FormSubmit’s privacy policy</a>.
+            </p>
+            <p class="help">Select Send support request to continue to FormSubmit’s verification page. Complete its verification to finish submitting. If submission fails, return here and retry, or email us directly.</p>
+            <button type="submit">Send support request</button>
+          </form>
+          <p>
+            Prepare a request with your theme version, store address, affected
+            page, expected behavior and reproduction steps. Never send
+            passwords, access tokens or customer information. Support policy
+            draft: reply within two business days; prioritize checkout blockers
+            and data-loss defects immediately. This policy requires an assigned
+            human operator at launch.
+          </p>
+        </section>
+        <footer>
+          Crumb &amp; Kind · Candidate documentation · Updated November 1, 2026
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
