@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Crumb and Kind — Theme guide</title>
+    <title>Crumbkind — Theme guide</title>
     <link rel="stylesheet" href="guide.css" />
     <script src="support.js" defer></script>
   </head>
   <body>
     <a class="skip" href="#guide">Skip to guide</a>
     <header>
-      <a href="index.html" class="brand">Crumb &amp; Kind</a
-      ><span>Theme guide · 0.3.0 candidate</span>
+      <a href="index.html" class="brand">Crumbkind</a
+      ><span>Theme guide · 0.5.3 candidate</span>
     </header>
     <div class="layout">
       <nav aria-label="Guide contents">
@@ -31,7 +31,7 @@
           storefront your own.
         </p>
         <p class="notice">
-          This guide describes the 0.3.0 candidate. It is not a Shopify Theme
+          This guide describes the 0.5.3 candidate. It is not a Shopify Theme
           Store approval or a promise of availability. See Get support for
           contact details and the current support setup status.
         </p>
@@ -49,8 +49,9 @@
               you have reviewed the new preview.
             </li>
             <li>
-              Add your own products and collections. Choose a collection in the
-              Featured collection section and link your hero button.
+              Add your own products and collections. In Little moments hero,
+              choose an image and a product for the real starting price. Set
+              the button destination. Add and configure Gift choices below it.
             </li>
             <li>
               Open Customize and add the sections you need. Use the preview
@@ -89,10 +90,11 @@
               record into Shared gift information and save.
             </li>
             <li>
-              In the theme editor, add a Specific box choice to Gift guide and
-              comparison. Select the product and copy the numeric variant ID
-              from its Shopify admin address into Variant ID. A single default
-              variant needs no ID.
+              In the theme editor, add a Gift choice block to Gift choices.
+              The optional advanced Gift guide and comparison section uses
+              Specific box choice blocks instead. Select the product and copy
+              the numeric variant ID from its Shopify admin address into
+              Variant ID. A single default variant needs no ID.
             </li>
             <li>
               Add the Shared gift details block to the product template. It
@@ -113,7 +115,7 @@
             a shopper filters by people.
           </p>
           <p>
-            The curated guide renders up to twelve choices and resolves variant
+            The optional advanced guide renders up to twelve choices and resolves variant
             IDs from the product’s first 250 variants. The ordinary product
             option picker loads options on demand and does not require a
             complete variant list. For a high-variant catalog, curate eligible
@@ -126,8 +128,21 @@
             Use <strong>Theme settings → Brand</strong> to choose a logo, a
             display name and favicon. Leave Brand name blank to use your Shopify
             store name. Colors and Typography control the whole storefront.
-            System fonts are the initial default; you can choose Shopify library
-            fonts instead.
+            The 0.5.3 candidate uses Shopify font pickers for Headings and Body.
+            Both default to Host Grotesk, with semibold headings and regular
+            body text. Change either picker to use another supported Shopify
+            font. The Crumbkind theme style restores the default colors and fonts.
+            Product selections, your logo and photography still need your own setup.
+          </p>
+          <p>
+            The Little moments hero can switch between two supplied images.
+            It is an image toggle, not a live 3D model. Gift choices need a real
+            product selection and the exact variant for products with options.
+            Add your verified contents, piece count and sharing range. Shared
+            variant data takes priority when present; blank facts are not
+            invented. On each product template, keep box details above Buy
+            buttons and remove any default informational copy until it has
+            been replaced with facts about your business.
           </p>
           <p>
             Product headings, prices, options, buy buttons, shared gift details,
@@ -180,24 +195,40 @@
             location.
           </p>
           <p>
-            Gift messages are line item properties. All boxes on the same bag
+            Gift messages are optional line item properties. Open Add a personal
+            message to type up to 160 characters and view a plain-text preview.
+            All boxes on the same bag
             line receive the same message. Add the same variant again with
             another message for a separate line. Printing, packing and
             fulfillment are the merchant’s responsibility.
           </p>
           <p>
-            Order notes are separate from printed gift messages. Save bag
+            Order notes are separate from the per-gift message property. Save bag
             changes before accelerated checkout; its buttons are hidden while an
             order note or quantity has unsaved edits.
           </p>
           <p>
             For gift card products, shoppers can enter a recipient and scheduled
             sending date. Issued gift cards have a QR code, balance, expiry and
-            an Apple Wallet link when Shopify provides one.
+            an Apple Wallet link when Shopify provides one. The optional
+            recipient fields require JavaScript; normal gift-card purchase
+            remains available without those fields.
+          </p>
+          <p>
+            Subscription plans and their purchase selector come from a compatible
+            subscription app. Add its app block in the product template; the
+            theme displays the selected plan and its actual price in the bag.
+            Installing this theme does not create subscription plans.
           </p>
         </section>
         <section id="updates">
           <h2>Update safely</h2>
+          <p>
+            Version 0.5.3 restores gift-choice block selection after a section
+            is removed and reinserted, and lets long store names wrap in the
+            desktop header. It also includes the 0.5.2 corrections to sharing
+            image metadata and predictive-search keyboard navigation.
+          </p>
           <ol>
             <li>Duplicate your current theme before any update.</li>
             <li>
@@ -295,11 +326,11 @@
           </p>
           <form id="support-form" action="https://formsubmit.co/cxy16@hotmail.com"
             method="post" enctype="multipart/form-data" aria-describedby="support-setup support-privacy">
-            <input type="hidden" name="_subject" value="Crumb and Kind — theme support" />
+            <input type="hidden" name="_subject" value="Crumbkind — theme support" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_next" value="https://cxy486.github.io/crumb-kind-docs/thanks.html" />
-            <input type="hidden" name="_autoresponse" value="We received your Crumb and Kind theme support request. This is an automatic acknowledgement, not a resolution. Keep your theme version, affected page and reproduction steps in this conversation. Do not send passwords, payment information or customer data. You can reply to the theme owner at cxy16@hotmail.com." />
-            <input type="hidden" name="theme" value="Crumb and Kind" />
+            <input type="hidden" name="_autoresponse" value="We received your Crumbkind theme support request. This is an automatic acknowledgement, not a resolution. Keep your theme version, affected page and reproduction steps in this conversation. Do not send passwords, payment information or customer data. You can reply to the theme owner at cxy16@hotmail.com." />
+            <input type="hidden" name="theme" value="Crumbkind" />
             <div class="pair">
               <div>
                 <label for="support-name">Full name (required)</label>
@@ -318,7 +349,7 @@
             </div>
             <div>
               <label for="support-version">Theme version (optional)</label>
-              <input id="support-version" name="theme_version" maxlength="40" placeholder="For example, 0.3.0" />
+              <input id="support-version" name="theme_version" maxlength="40" placeholder="For example, 0.5.3" />
             </div>
             <div>
               <label for="support-message">Describe the problem (required)</label>
@@ -361,7 +392,7 @@
           </p>
         </section>
         <footer>
-          Crumb &amp; Kind · Candidate documentation · Updated November 1, 2026
+          Crumbkind · Candidate documentation · Updated November 3, 2026
         </footer>
       </main>
     </div>
